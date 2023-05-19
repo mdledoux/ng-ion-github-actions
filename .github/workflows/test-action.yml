@@ -13,9 +13,9 @@ jobs:
   build:
     name: Build Angular Web App
     runs-on: ubuntu-latest
-    env:
-      # RELEASE_KEYSTORE: android/release.decoded.jks
-      # SIGNED_APK_OUTPUT: ./android/app/build/outputs/apk/release/mmPortalDevApk_${{ secrets.VERSION }}_${{ secrets.VERSION_CODE }}.apk
+    # env:
+    #   RELEASE_KEYSTORE: android/release.decoded.jks
+    #   SIGNED_APK_OUTPUT: ./android/app/build/outputs/apk/release/mmPortalDevApk_${{ secrets.VERSION }}_${{ secrets.VERSION_CODE }}.apk
     steps:
       - name: Checkout source
         uses: actions/checkout@v2
