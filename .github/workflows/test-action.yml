@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - "actions-testing"
+  pull_request:
+    branches:
+      - "develop" 
+    paths:
+      - ".github/workflows/test.yaml"
+
+
+jobs:
+  build:
+    name: Build Angular Web App
+    runs-on: ubuntu-latest
+    env:
+      # RELEASE_KEYSTORE: android/release.decoded.jks
+      # SIGNED_APK_OUTPUT: ./android/app/build/outputs/apk/release/mmPortalDevApk_${{ secrets.VERSION }}_${{ secrets.VERSION_CODE }}.apk
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Setup Ionic
+        run: npm install -D @ionic/cli
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install dependencies
+        run: npx ng build
