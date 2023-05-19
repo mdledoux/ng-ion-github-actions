@@ -1,0 +1,7 @@
+{
+  "name": "ng-ion-github-actions",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
